@@ -1,0 +1,50 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: to-do-list-deployment
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: to-do-list
+  template:
+    metadata:
+      labels:
+        app: to-do-list
+    spec:
+      containers:
+      - name: to-do-list-frontend
+        image: coooolkpk/to-do-list-frontend:v2.1
+        resources:
+          requests:
+            memory: "50Mi"
+            cpu: "50m"
+        ports:
+        - containerPort: 80
+      - name: to-do-list-backend
+        image: coooolkpk/to-do-list-backend:v4
+        resources:
+          requests:
+            memory: "300Mi"
+            cpu: "200m"
+        ports:
+        - containerPort: 3000
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: to-do-list-service
+spec:
+  type: LoadBalancer
+  selector:
+    app: to-do-list
+  ports:
+  - name: frontend
+    port: 80
+    targetPort: 80
+    #nodePort: 30081
+  - name: api
+    port: 3000
+    targetPort: 3000
+    #nodePort: 30082
+

@@ -1,0 +1,36 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nginx-deployment
+  labels:
+    app: my-nginx
+    type: nginx-deployment
+spec:
+  template:
+    metadata:
+      name: nginx-pod
+      labels:
+        app: my-nginx
+        type: nginx-deployment
+    spec:
+      containers:
+        - name: nginx-container
+          image: nginxdemos/hello
+  replicas: 3
+  selector:
+    matchLabels:
+      type: nginx-deployment
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: nginx-service
+spec:
+  type: NodePort
+  ports:
+    - port: 80
+      nodePort: 30006
+      targetPort: 80
+  selector:
+    app: my-nginx
+    type: nginx-deployment

@@ -9,10 +9,21 @@ spec:
     name: mongodb-statefulset
   minReplicas: 1
   maxReplicas: 5
+  behavior:
+    scaleUp:
+      policies:
+      - type: Pods
+        value: 1
+        periodSeconds: 60
+    scaleDown:
+      policies:
+      - type: Percent
+        value: 10
+        periodSeconds: 60
   metrics:
   - type: Resource
     resource:
       name: cpu
       target:
         type: Utilization
-        averageUtilization: 50
+        averageUtilization: 80

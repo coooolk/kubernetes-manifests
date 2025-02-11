@@ -8,18 +8,18 @@ spec:
     kind: StatefulSet
     name: mongodb-statefulset
   minReplicas: 1
-  maxReplicas: 5
+  maxReplicas: 3
   behavior:
     scaleUp:
       policies:
       - type: Pods
         value: 1
-        periodSeconds: 60
+        periodSeconds: 30
     scaleDown:
       policies:
       - type: Percent
         value: 10
-        periodSeconds: 60
+        periodSeconds: 30
   metrics:
   - type: Resource
     resource:

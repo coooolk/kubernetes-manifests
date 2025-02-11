@@ -6,7 +6,7 @@ metadata:
   labels:
     app: backend
 spec:
-  replicas: 2
+  replicas: 1
   selector:
     matchLabels:
       app: backend
@@ -18,7 +18,7 @@ spec:
     spec:
       containers:
         - name: backend
-          image: coooolkpk/wanderlust-backend-beta:1.1
+          image: coooolkpk/wanderlust-backend-beta:1.2
           ports:
             - containerPort: 8080
 ---

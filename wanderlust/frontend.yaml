@@ -6,7 +6,7 @@ metadata:
   labels:
     app: frontend
 spec:
-  replicas: 2
+  replicas: 1
   selector:
     matchLabels:
       app: frontend
@@ -18,7 +18,7 @@ spec:
     spec:
       containers:
         - name: frontend
-          image: coooolkpk/wanderlust-frontend-beta:1.1
+          image: coooolkpk/wanderlust-frontend-beta:1.2
           ports:
             - containerPort: 5173
 ---

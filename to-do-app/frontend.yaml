@@ -19,10 +19,11 @@ spec:
         image: coooolkpk/todo-app-frontend:latest 
         ports:
         - containerPort: 80
-        limits: 
-          cpu: 300m
-        requests:
-          cpu: 100m
+        resources:
+          limits: 
+            cpu: 300m
+          requests:
+            cpu: 200m
 
 
 ---

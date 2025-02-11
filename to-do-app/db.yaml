@@ -23,10 +23,11 @@ spec:
         volumeMounts:
         - name: mongodb-persistent-storage
           mountPath: /data/db 
-        limits: 
-          cpu: 300m
-        requests:
-          cpu: 100m
+        resources:
+          limits: 
+            cpu: 300m
+          requests:
+            cpu: 200m
       volumes: 
       - name: mongodb-persistent-storage 
         persistentVolumeClaim:

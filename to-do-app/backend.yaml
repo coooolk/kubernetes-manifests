@@ -19,6 +19,10 @@ spec:
         image: coooolkpk/todo-app-backend:latest 
         ports:
         - containerPort: 5000
+        limits: 
+          cpu: 300m
+        requests:
+          cpu: 100m
         env:
         - name: PORT
           value: "5000"

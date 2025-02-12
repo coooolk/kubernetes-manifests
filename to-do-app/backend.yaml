@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: backend
-        image: coooolkpk/todo-app-backend:latest 
+        image: coooolkpk/todo-app-backend:v1
         ports:
         - containerPort: 5000
         resources:

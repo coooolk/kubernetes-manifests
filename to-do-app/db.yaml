@@ -7,7 +7,7 @@ spec:
     matchLabels:
       app: mongodb
   serviceName: "mongodb-service"
-  replicas: 1
+  #replicas: 1 #commented replicas count because it was conflicting with hpa and argocd
   template:
     metadata:
       labels:

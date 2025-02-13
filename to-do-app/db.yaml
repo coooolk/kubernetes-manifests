@@ -22,25 +22,21 @@ spec:
           name: mongodb
         volumeMounts:
         - name: mongodb-persistent-storage
-          mountPath: /data/db 
+          mountPath: /data/db
         resources:
-          limits: 
+          limits:
             cpu: 300m
           requests:
             cpu: 200m
-      #volumes: 
-      #- name: mongodb-persistent-storage 
-      #  persistentVolumeClaim:
-      #    claimName: mongodb-pvc 
+      # Remove the volumes section here.  PVCs are handled by volumeClaimTemplates
   volumeClaimTemplates:
   - metadata:
       name: mongodb-persistent-storage
     spec:
-      accessModes: ["ReadWriteOnce"]
+      accessModes: [ "ReadWriteOnce" ]
       resources:
         requests:
-         storage: 1Gi
-        
+          storage: 1Gi
 
 ---
 

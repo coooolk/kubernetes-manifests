@@ -28,7 +28,7 @@ spec:
         - name: PORT
           value: "5000"
         - name: MONGODB_URI
-          value: "mongodb+srv://pico:Kavi2003@cluster0.0eiuu.mongodb.net/" 
+          value: "mongodb://db.techtronics.top:27018/" 
         - name: DB_NAME
           value: "todo_app_db"
 

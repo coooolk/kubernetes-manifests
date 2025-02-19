@@ -28,7 +28,6 @@ spec:
             cpu: 700m
           requests:
             cpu: 500m
-<<<<<<< HEAD
       #volumes: 
       #- name: mongodb-persistent-storage 
       #  persistentVolumeClaim:
@@ -41,7 +40,6 @@ spec:
       resources:
         requests:
           storage: 1Gi
-=======
       volumes: 
       - name: mongodb-persistent-storage 
         persistentVolumeClaim:
@@ -54,7 +52,6 @@ spec:
   #    resources:
   #      requests:
   #        storage: 1Gi
->>>>>>> f046d74d380478a8cc244a747226c159ba351610
 
 ---
 
@@ -71,36 +68,6 @@ spec:
 
 ---
 
-<<<<<<< HEAD
-#apiVersion: v1
-#kind: PersistentVolumeClaim
-#metadata:
-#  name: mongodb-pvc 
-#spec:
-#  storageClassName: standard-rwo
-#  accessModes:
-#    - ReadWriteOnce 
-#  resources:
-#    requests:
-#      storage: 1Gi 
-#  volumeName: mongodb-pv 
-#
-#---
-#
-#apiVersion: v1
-#kind: PersistentVolume
-#metadata:
-#  name: mongodb-pv 
-#spec:
-#  storageClassName: standard-rwo
-#  capacity:
-#    storage: 1Gi 
-#  accessModes:
-#    - ReadWriteOnce 
-#  persistentVolumeReclaimPolicy: Retain 
-#  hostPath: 
-#    path: /home/mongo 
-=======
 apiVersion: v1
 kind: PersistentVolumeClaim
 metadata:
@@ -127,4 +94,3 @@ spec:
   persistentVolumeReclaimPolicy: Retain 
   hostPath: 
     path: /home/pico/mongo 
->>>>>>> f046d74d380478a8cc244a747226c159ba351610

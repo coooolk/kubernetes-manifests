@@ -28,18 +28,6 @@ spec:
             cpu: 700m
           requests:
             cpu: 500m
-      #volumes: 
-      #- name: mongodb-persistent-storage 
-      #  persistentVolumeClaim:
-      #    claimName: mongodb-pvc 
-  volumeClaimTemplates:
-  - metadata:
-      name: mongodb-persistent-storage
-    spec:
-      accessModes: [ "ReadWriteOnce" ]
-      resources:
-        requests:
-          storage: 1Gi
       volumes: 
       - name: mongodb-persistent-storage 
         persistentVolumeClaim:
@@ -52,6 +40,10 @@ spec:
   #    resources:
   #      requests:
   #        storage: 1Gi
+  #    volumes: 
+  #    - name: mongodb-persistent-storage 
+  #      persistentVolumeClaim:
+  #        claimName: mongodb-pvc 
 
 ---
 
